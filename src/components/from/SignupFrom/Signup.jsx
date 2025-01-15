@@ -249,7 +249,7 @@ const SignupFrom = () => {
                     </div>
                     <div className="flex items-center mb-10">
                         <p className="flex-col ml-2 text-sm text-gray-700">
-                            Already have and account?<Link to={'/login'}><b className="ml-1 pointer hover:text-gray-800">Login</b></Link>
+                            Already have an account?<Link to={'/login'}><b className="ml-1 pointer hover:text-gray-800">Login</b></Link>
                         </p>
                     </div>
 
