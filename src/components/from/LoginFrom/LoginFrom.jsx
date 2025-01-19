@@ -9,7 +9,7 @@ import { AuthContext } from "../../../context/AuthContext";
 
 const LoginForm = () => {
     const [isLoading, setIsLoading] = useState(false)
-    const {setUser} = useContext(AuthContext)
+    const { setUser } = useContext(AuthContext)
     const handleLogin = (e) => {
         e.preventDefault()
         setIsLoading(true)
@@ -24,9 +24,9 @@ const LoginForm = () => {
                 Cookies.set('accessToken', res?.data?.accessToken)
                 setUser(res?.data?.user)
                 const token = Cookies.get('accessToken');
-                console.log("Token==>",Cookies.get("token"))
-                console.log("accessToken==>",token)
-                console.log("URL==>",AppRoutes.getMyInfo)
+                console.log("Token==>", Cookies.get("token"))
+                console.log("accessToken==>", token)
+                console.log("URL==>", AppRoutes.getMyInfo)
                 Swal.fire({
                     title: 'Login Successfully!',
                     icon: 'success',
@@ -34,10 +34,11 @@ const LoginForm = () => {
             }).catch((err) => {
                 setIsLoading(false)
                 console.log("err in the login=>", err)
-                console.log("err in the login=>", err.response.data.message)
+                // console.log("err in the login=>", err.response.data.message)
+                const errorMessage = err.response ? err.response.data.message : err.message;
                 Swal.fire({
                     title: 'SomThing Went Wrong!',
-                    text: err.response.data.message,
+                    text: errorMessage,
                     icon: 'error',
                 })
             })

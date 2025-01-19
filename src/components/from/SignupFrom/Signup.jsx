@@ -39,9 +39,10 @@ const SignupFrom = () => {
                 setIsLoading(false)
                 console.log("err in the Register=>", err.response.data.message)
                 // console.log("err in the Register=>")
+                const errorMessage = err.response ? err.response.data.message : err.message;
                 Swal.fire({
                     title: 'SomThing Went Wrong!',
-                    text: err.response.data.message,
+                    text: errorMessage,
                     icon: 'error',
                 })
             })
