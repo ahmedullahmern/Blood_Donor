@@ -234,7 +234,7 @@ const SignupFrom = () => {
                         />
                     </div>
 
-                    {/* Is Available */}
+                    {/* Is Available true */}
                     <div className="flex  items-center">
                         <input
                             type="checkbox"
